@@ -1,0 +1,1090 @@
+[
+  {
+    "name": "oiShort",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x09163014",
+    "signature": "oiShort()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "oiLongShares",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x2acb3810",
+    "signature": "oiLongShares()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "ask",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "data",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "microWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "macroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMacroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOneMacroWindowAgo",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "reserveOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "hasReserve",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ],
+        "internalType": "struct Oracle.Data"
+      },
+      {
+        "name": "volume",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ask_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x2eda95c2",
+    "signature": "ask((uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool),uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "dpUpperLimit",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x3197e192",
+    "signature": "dpUpperLimit()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "feed",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x37a7b7d8",
+    "signature": "feed()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "unpause",
+    "type": "function",
+    "inputs": [],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0x3f4ba83a",
+    "signature": "unpause()",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "unwind",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "positionId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "fraction",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "priceLimit",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0x46322c37",
+    "signature": "unwind(uint256,uint256,uint256)",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "positions",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "liquidity",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "feeGrowthInside0LastX128",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeGrowthInside1LastX128",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "tokensOwed0",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "tokensOwed1",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x514ea4bf",
+    "signature": "positions(bytes32)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "emergencyWithdraw",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "_pid",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0x5312ea8e",
+    "signature": "emergencyWithdraw(uint256)",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "dataIsValid",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "data",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "microWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "macroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMacroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOneMacroWindowAgo",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "reserveOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "hasReserve",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ],
+        "internalType": "struct Oracle.Data"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x58171a61",
+    "signature": "dataIsValid((uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool))",
+    "stateMutability": "view"
+  },
+  {
+    "name": "build",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "collateral",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "leverage",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "isLong",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "priceLimit",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "positionId_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x59968288",
+    "signature": "build(uint256,uint256,bool,uint256)",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "initialize",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "_params",
+        "type": "uint256[15]",
+        "internalType": "uint256[15]"
+      }
+    ],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0x5ad7226f",
+    "signature": "initialize(uint256[15])",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "snapshotMinted",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "timestamp",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "window",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "accumulator",
+        "type": "int192",
+        "internalType": "int192"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x5b6df29a",
+    "signature": "snapshotMinted()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "paused",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x5c975abb",
+    "signature": "paused()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "oiLong",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x5dedde6d",
+    "signature": "oiLong()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "setRiskParam",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "name",
+        "type": "uint8",
+        "internalType": "enum Risk.Parameters"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0x640d0c28",
+    "signature": "setRiskParam(uint8,uint256)",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "frontRunBound",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "data",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "microWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "macroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMacroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOneMacroWindowAgo",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "reserveOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "hasReserve",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ],
+        "internalType": "struct Oracle.Data"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x6c629159",
+    "signature": "frontRunBound((uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool))",
+    "stateMutability": "view"
+  },
+  {
+    "name": "pause",
+    "type": "function",
+    "inputs": [],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0x8456cb59",
+    "signature": "pause()",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "bid",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "data",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "microWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "macroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMacroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOneMacroWindowAgo",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "reserveOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "hasReserve",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ],
+        "internalType": "struct Oracle.Data"
+      },
+      {
+        "name": "volume",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "bid_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x8607f5c3",
+    "signature": "bid((uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool),uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "oiFromNotional",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "notional",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "midPrice",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x8eba3535",
+    "signature": "oiFromNotional(uint256,uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "backRunBound",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "data",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "microWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "macroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMacroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOneMacroWindowAgo",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "reserveOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "hasReserve",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ],
+        "internalType": "struct Oracle.Data"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x92aac701",
+    "signature": "backRunBound((uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool))",
+    "stateMutability": "view"
+  },
+  {
+    "name": "params",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x9d2f053c",
+    "signature": "params(uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "oiAfterFunding",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "oiOverweight",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "oiUnderweight",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "timeElapsed",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0x9f0a5459",
+    "signature": "oiAfterFunding(uint256,uint256,uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "update",
+    "type": "function",
+    "inputs": [],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0xa2e62045",
+    "signature": "update()",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "ovl",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IOverlayV1Token"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xb29fa9c3",
+    "signature": "ovl()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "snapshotVolumeBid",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "timestamp",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "window",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "accumulator",
+        "type": "int192",
+        "internalType": "int192"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xb445e2e7",
+    "signature": "snapshotVolumeBid()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "liquidate",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "borrower",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0xbcbaf487",
+    "signature": "liquidate(address,uint256)",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "capOiAdjustedForCircuitBreaker",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "cap",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xbf65b2fb",
+    "signature": "capOiAdjustedForCircuitBreaker(uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "isShutdown",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xbf86d690",
+    "signature": "isShutdown()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "factory",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xc45a0155",
+    "signature": "factory()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "timestampUpdateLast",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xc6838e8b",
+    "signature": "timestampUpdateLast()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "allowance",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "spender",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xdd62ed3e",
+    "signature": "allowance(address,address)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "circuitBreaker",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "snapshot",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "window",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "accumulator",
+            "type": "int192",
+            "internalType": "int192"
+          }
+        ],
+        "internalType": "struct Roller.Snapshot"
+      },
+      {
+        "name": "cap",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xd43cbd8e",
+    "signature": "circuitBreaker((uint32,uint32,int192),uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "snapshotVolumeAsk",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "timestamp",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "window",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "accumulator",
+        "type": "int192",
+        "internalType": "int192"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xd565cc33",
+    "signature": "snapshotVolumeAsk()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "capNotionalAdjustedForBounds",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "data",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "microWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "macroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOverMacroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "priceOneMacroWindowAgo",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "reserveOverMicroWindow",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "hasReserve",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ],
+        "internalType": "struct Oracle.Data"
+      },
+      {
+        "name": "cap",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xecc16191",
+    "signature": "capNotionalAdjustedForBounds((uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool),uint256)",
+    "stateMutability": "view"
+  },
+  {
+    "name": "oiShortShares",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "payable": null,
+    "constant": null,
+    "selector": "0xf333fe13",
+    "signature": "oiShortShares()",
+    "stateMutability": "view"
+  },
+  {
+    "name": "shutdown",
+    "type": "function",
+    "inputs": [],
+    "outputs": [],
+    "payable": null,
+    "constant": null,
+    "selector": "0xfc0e74d1",
+    "signature": "shutdown()",
+    "stateMutability": "nonpayable"
+  }
+]
