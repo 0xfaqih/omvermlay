@@ -1,6 +1,6 @@
 import { Wallet, Contract, formatUnits, parseUnits } from "ethers";
 import overlayAbi from "../abis/overlayAbi.json";
-import { COLLATERAL_AMOUNT_OVL, DELAY_BETWEEN_RUNS_MS, LEVERAGE, OVL_CONTRACT_ADDRESS } from "../config/constants";
+import { COLLATERAL_AMOUNT_OVL, DELAY_BETWEEN_RUNS_MS, LEVERAGE, OVL_CONTRACT_ADDRESS, UNWIND_FRACTION } from "../config/constants";
 import { log } from "../core/logger";
 import { calculatePriceLimit } from "../core/priceUtils";
 import { fetchMarketOverview } from "../services/overlayApi";
@@ -56,9 +56,9 @@ export class PositionManager {
   async closePosition(positionId: string, isLong: boolean): Promise<void> {
     const currentPrice = await this.getLatestPrice();
     const priceLimit = calculatePriceLimit(currentPrice, isLong, false);
-    const collateral = parseUnits(COLLATERAL_AMOUNT_OVL, 18);
+    const fraction = parseUnits(UNWIND_FRACTION, 18);
 
-    const tx = await this.contract.unwind(positionId, collateral, priceLimit);
+    const tx = await this.contract.unwind(positionId, fraction, priceLimit);
     await log(`🛑 <b>Unwind TX dikirim</b>: <code>${tx.hash}</code>`);
     await tx.wait();
 
