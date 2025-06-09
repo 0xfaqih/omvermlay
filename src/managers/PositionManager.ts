@@ -1,12 +1,13 @@
 import { Wallet, Contract, formatUnits, parseUnits } from "ethers";
 import overlayAbi from "../abis/overlayAbi.json";
-import { COLLATERAL_AMOUNT_OVL, DELAY_BETWEEN_RUNS_MS, LEVERAGE, OVL_CONTRACT_ADDRESS, UNWIND_FRACTION } from "../config/constants";
+import { DELAY_BETWEEN_RUNS_MS, OVL_CONTRACT_ADDRESS, UNWIND_FRACTION } from "../config/constants";
 import { log } from "../core/logger";
 import { calculatePriceLimit } from "../core/priceUtils";
 import { fetchMarketOverview } from "../services/overlayApi";
 import { fetchLatestPositionId } from "../services/graphClient";
 import { ensureAllowance } from "../services/allowance";
 import { delay } from "../utils/delay";
+import { getRandomCollateralAmountOvl, getRandomLeverage } from "../utils/random";
 
 export class PositionManager {
   private wallet: Wallet;
@@ -26,17 +27,19 @@ export class PositionManager {
     }
     return parseUnits(overview.latestPrice.toString(), 18);
   }
-
   async openPosition(isLong: boolean): Promise<string> {
+    const randomCollateral = getRandomCollateralAmountOvl();
+
     await ensureAllowance(
       this.wallet,
-      OVL_CONTRACT_ADDRESS, // token OVL address
-      this.contract.target as string,             // spender = market contract
-      COLLATERAL_AMOUNT_OVL
+      OVL_CONTRACT_ADDRESS, 
+      this.contract.target as string,             
+      randomCollateral
     );
 
-    const collateral = parseUnits(COLLATERAL_AMOUNT_OVL, 18);
-    const leverage = parseUnits(LEVERAGE.toString(), 18);
+    const randomLeverage = getRandomLeverage();
+    const collateral = parseUnits(randomCollateral, 18);
+    const leverage = parseUnits(randomLeverage.toString(), 18);
     const currentPrice = await this.getLatestPrice();
     const priceLimit = calculatePriceLimit(currentPrice, isLong, true);
 
