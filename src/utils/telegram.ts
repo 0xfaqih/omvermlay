@@ -1,6 +1,6 @@
 // src/utils/telegram.ts
 import axios from "axios";
-import { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID } from "../config/env";
+import { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_THREAD_ID } from "../config/env";
 
 export async function sendTelegramHtml(message: string): Promise<void> {
   try {
@@ -8,6 +8,7 @@ export async function sendTelegramHtml(message: string): Promise<void> {
 
     await axios.post(url, {
       chat_id: TELEGRAM_CHAT_ID,
+      message_thread_id: TELEGRAM_THREAD_ID,
       text: message,
       parse_mode: "HTML"
     });

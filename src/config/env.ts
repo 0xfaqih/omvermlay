@@ -14,3 +14,4 @@ export const RPC_URL = requireEnv("RPC_URL");
 
 export const TELEGRAM_TOKEN = requireEnv("TELEGRAM_TOKEN");
 export const TELEGRAM_CHAT_ID = requireEnv("TELEGRAM_CHAT_ID");
+export const TELEGRAM_THREAD_ID = requireEnv("TELEGRAM_THREAD_ID");
