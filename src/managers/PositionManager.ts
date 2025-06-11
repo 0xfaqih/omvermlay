@@ -63,8 +63,8 @@ export class PositionManager {
 
     const tx = await this.contract.unwind(positionId, fraction, priceLimit);
     await log(`🛑 <b>Unwind TX dikirim</b>: <code>${tx.hash}</code>`);
-    await tx.wait();
-
+    const receipt = await tx.wait();
+    await log(`✅ Transaksi sukses di blok ${receipt.blockNumber}, tx hash: ${tx.hash}`);
     await log(`✅ Posisi ${positionId} berhasil ditutup.`);
   }
 }

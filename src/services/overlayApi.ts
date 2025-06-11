@@ -1,5 +1,5 @@
 import axios from "axios";
-import { MarketInfo } from "../types/market";
+import { ClaimStatusResponse, MarketInfo } from "../types/market";
 
 export async function fetchMarketList(): Promise<MarketInfo[]> {
   try {
@@ -37,5 +37,20 @@ export async function fetchMarketOverview(marketAddress: string): Promise<{ late
   } catch (err) {
     console.error("[OverlayAPI] Gagal fetch market overview:", err.message);
     return null;
+  }
+}
+
+export async function claimFaucet(walletAddress: string): Promise<ClaimStatusResponse> {
+  const payload = {
+    tokens: ["ovl", "eth"],
+    chains: ["bnb-testnet"],
+    recipient: walletAddress
+  }
+  try {
+    const res = await axios.post("https://api.overlay.market/faucet/", payload);
+    return res.data as ClaimStatusResponse;
+  } catch (err) {
+    console.error("[OverlayAPI] Gagal claim faucet:", err.message);
+    return { [walletAddress]: { status: 'error', reason: err.message } };
   }
 }

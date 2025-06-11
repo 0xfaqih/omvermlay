@@ -1,14 +1,13 @@
 export const RPC_URL = "https://bsc-testnet.public.blastapi.io";
 export const OVL_CONTRACT_ADDRESS = "0xb880E767739A82Eb716780BDfdbC1eD7b23BDB38"
-export const COLLATERAL_AMOUNT_OVL = "5";
 export const MIN_COLLATERAL_AMOUNT = 1;
-export const MAX_COLLATERAL_AMOUNT = 5;
+export const MAX_COLLATERAL_AMOUNT = 10;
 export const MIN_LEVERAGE = 1;
-export const MAX_LEVERAGE = 5;
-export const LEVERAGE = 1;
+export const MAX_LEVERAGE = 7;
 export const UNWIND_FRACTION = "1";
 export const SLIPPAGE_PERCENT = 1; 
 export const MIN_UNWIND_DELAY_MINUTES = 1;
 export const MAX_UNWIND_DELAY_MINUTES = 3;
 export const DELAY_BETWEEN_RUNS_MS = 60 * 1000;
 export const WALLET_NAME = "wallet";
+export const DELAY_FAUCET = 24 * 60 * 60 * 1000;
